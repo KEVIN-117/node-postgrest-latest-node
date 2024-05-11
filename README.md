@@ -1,6 +1,6 @@
 # Node js Express API
 
-Plantilla de API RESTful en Node.js con Express.
+Plantilla de API RESTful en Node.js con Express(v22.1.0) y PostgreSQL.
 
 ## Características
 
@@ -13,6 +13,19 @@ Plantilla de API RESTful en Node.js con Express.
 - **ESLint**: Herramienta de análisis de código estático para identificar patrones problemáticos en el código JavaScript.
 - **Prettier**: Formateador de código de opinión que garantiza que todo el código en su base de código se vea y se formatee de la misma manera.
 - **Husky**: Herramienta para configurar ganchos de Git.
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Git](https://git-scm.com/)
+- [Visual Studio Code](https://code.visualstudio.com/) (opcional)
+- [Insomnia](https://insomnia.rest/) (opcional)
+- [DataGrip](https://www.jetbrains.com/datagrip/) (opcional)
+- [DBeaver](https://dbeaver.io/) (opcional)
+- [pgAdmin](https://www.pgadmin.org/) (opcional)
 
 ```
 project-root/
@@ -58,7 +71,6 @@ project-root/
 │
 └── package.json
 ```
-
 - **src/**: Contiene el código fuente de la aplicación.
     - **controllers/**: Controladores que manejan las solicitudes HTTP y llaman a los servicios correspondientes.
     - **models/**: Definiciones de modelos de datos utilizando, por ejemplo, Mongoose para MongoDB.
