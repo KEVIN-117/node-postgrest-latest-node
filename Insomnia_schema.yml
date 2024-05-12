@@ -1,0 +1,232 @@
+_type: export
+__export_format: 4
+__export_date: 2024-05-12T15:08:35.750Z
+__export_source: insomnia.desktop.app:v9.1.1
+resources:
+  - _id: req_8c9bde837a6f42dfa358195c00b51750
+    parentId: wrk_feb6cd9d207a4c7a92aa5b5f6da077bf
+    modified: 1715525870789
+    created: 1715525853314
+    url: "{{ _.BASE_URL }}/api/invoice"
+    name: New Request
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.1.1
+    authentication: {}
+    metaSortKey: -1715525853314
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_feb6cd9d207a4c7a92aa5b5f6da077bf
+    parentId: null
+    modified: 1715525199808
+    created: 1715525199808
+    name: eschemas
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_340090bb6c31459e8f5bb17de3670cae
+    parentId: fld_54f94beb229741ad888c70ac7c650f58
+    modified: 1715526151804
+    created: 1715525823449
+    url: "{{ _.BASE_URL }}/api/invoice"
+    name: createInvoice
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "amount": 100.50,
+          "date": "2024-05-12T12:00:00Z",
+          "status": "pending",
+          "client_id": "3958dc9e-712f-4377-85e9-fec4b6a6442a"
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.1.1
+    authentication: {}
+    metaSortKey: -1715525823449
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_54f94beb229741ad888c70ac7c650f58
+    parentId: wrk_feb6cd9d207a4c7a92aa5b5f6da077bf
+    modified: 1715525737899
+    created: 1715525737899
+    name: invoice
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1715525737899
+    _type: request_group
+  - _id: req_cf93f6e308b1477895e09fce986abbce
+    parentId: fld_54f94beb229741ad888c70ac7c650f58
+    modified: 1715525815149
+    created: 1715525755880
+    url: "{{ _.BASE_URL }}/api/invoice"
+    name: getInvoices
+    description: ""
+    method: GET
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.1.1
+    authentication: {}
+    metaSortKey: -1715525755880
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2bf9bbaaf04f4fa48cf6a761438d2fd4
+    parentId: fld_4d133d3543b74a7688f8e59258b33c3a
+    modified: 1715525691823
+    created: 1715525628587
+    url: "{{ _.BASE_URL }}/api/client/34f075e1-ef81-4153-81ab-586b4ff49b79"
+    name: deleteClient
+    description: ""
+    method: DELETE
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.1.1
+    authentication: {}
+    metaSortKey: -1715525628587
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_4d133d3543b74a7688f8e59258b33c3a
+    parentId: wrk_feb6cd9d207a4c7a92aa5b5f6da077bf
+    modified: 1715525296757
+    created: 1715525296757
+    name: client
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1715525296757
+    _type: request_group
+  - _id: req_c1f62b1e5e6a4c92a61a52fc868d2ddf
+    parentId: fld_4d133d3543b74a7688f8e59258b33c3a
+    modified: 1715526030556
+    created: 1715525389119
+    url: "{{ _.BASE_URL }}/api/client"
+    name: createClient
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Test Example",
+          "lastName": "Last Test",
+          "email": "john.doe@example.com",
+          "phone": "1234567890",
+          "address": "123 Main St",
+          "city": "Anytown",
+          "state": "active",
+          "profile": null
+        }
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.1.1
+    authentication: {}
+    metaSortKey: -1715525389119
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cf3b0c009fdb4f13965a460aaa576c4b
+    parentId: fld_4d133d3543b74a7688f8e59258b33c3a
+    modified: 1715525379899
+    created: 1715525339198
+    url: "{{ _.BASE_URL }}/api/client"
+    name: getClient
+    description: ""
+    method: GET
+    body: {}
+    preRequestScript: ""
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.1.1
+    authentication: {}
+    metaSortKey: -1715525339198
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_f87526fce97727c8e878b5494319d8f6a71d9699
+    parentId: wrk_feb6cd9d207a4c7a92aa5b5f6da077bf
+    modified: 1715525237594
+    created: 1715525199813
+    name: Base Environment
+    data:
+      BASE_URL: http://localhost:3000
+    dataPropertyOrder:
+      "&":
+        - BASE_URL
+    color: null
+    isPrivate: false
+    metaSortKey: 1715525199813
+    _type: environment
+  - _id: jar_f87526fce97727c8e878b5494319d8f6a71d9699
+    parentId: wrk_feb6cd9d207a4c7a92aa5b5f6da077bf
+    modified: 1715525199856
+    created: 1715525199856
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

@@ -86,3 +86,61 @@ project-root/
 - **tests/**: Contiene los archivos de prueba de la aplicación, organizados en pruebas unitarias, de integración y de extremo a extremo.
 
 - **package.json**: Archivo de configuración de npm que contiene metadatos del proyecto y las dependencias del paquete.
+
+
+## Implementaciones
+
+1. **Configuración del Proyecto**:
+  - Inicializa un proyecto de Node.js utilizando npm o yarn.
+  - Instala las dependencias necesarias, como Express para el servidor, y las bibliotecas de base de datos que prefieras (por ejemplo, Mongoose para MongoDB o Sequelize para SQL).
+  - Configura un archivo `.env` para gestionar las variables de entorno.
+
+2. **Estructura de Carpetas**:
+   ```
+   ├── src/
+   │   ├── controllers/
+   │   │   ├── clientController.js
+   │   │   ├── invoiceController.js
+   │   │   ├── debtController.js
+   │   │   └── imageController.js
+   │   ├── models/
+   │   │   ├── Client.js
+   │   │   ├── Invoice.js
+   │   │   ├── Debt.js
+   │   │   └── Image.js
+   │   ├── routes/
+   │   │   ├── clientRoutes.js
+   │   │   ├── invoiceRoutes.js
+   │   │   ├── debtRoutes.js
+   │   │   └── imageRoutes.js
+   │   ├── uploads/
+   │   ├── app.js
+   │   └── server.js
+   ├── .env
+   ├── package.json
+   └── ...
+   ```
+
+3. **Modelos**:
+  - `Client`: Modelo para gestionar la información de los clientes, como nombre, dirección, correo electrónico, etc.
+  - `Invoice`: Modelo para representar las facturas, incluyendo detalles como los productos comprados, total, fecha, etc.
+  - `Debt`: Modelo para manejar las deudas pendientes de los clientes.
+  - `Image`: Modelo para almacenar la información de las imágenes relacionadas con los productos.
+
+4. **Controladores**:
+  - Controladores para manejar las operaciones CRUD (crear, leer, actualizar, eliminar) para cada uno de los modelos mencionados anteriormente.
+
+5. **Rutas**:
+  - Define las rutas de la API para cada uno de los controladores, especificando los métodos HTTP y los manejadores de funciones correspondientes.
+
+6. **Subida de Imágenes**:
+  - Utiliza una biblioteca como Multer para gestionar la subida de imágenes desde el cliente al servidor.
+  - Almacena las imágenes en una carpeta dedicada en el servidor y guarda las referencias en la base de datos.
+
+7. **Autenticación y Autorización** (opcional):
+  - Implementa la autenticación de usuarios para proteger ciertas rutas o acciones, como la creación de facturas o la carga de imágenes.
+  - Gestiona los roles de usuario para definir quién puede realizar qué acciones.
+
+8. **Pruebas** (opcional pero recomendado):
+  - Escribe pruebas unitarias y de integración para garantizar el buen funcionamiento de tu aplicación.
+  - Puedes utilizar herramientas como Mocha, Chai, y Supertest para escribir y ejecutar pruebas.
