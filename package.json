@@ -6,12 +6,14 @@
   "type": "module",
   "scripts": {
     "dev": "node --env-file .env.develop --watch index.js",
-    "start": "node --env-file .env index.js",
+    "start:test": "node --env-file .env index.js",
+    "start": "node index.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "prepare": "husky",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.js\"",
-    "seed": "node --env-file .env.develop ./src/utils/seed.js"
+    "seed": "node --env-file .env.develop ./src/utils/seed.js",
+    "seed:prod": "node --env-file .env ./src/utils/seed.js"
   },
   "keywords": [],
   "author": "",

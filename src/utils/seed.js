@@ -163,9 +163,9 @@ async function seed() {
     await connection.connect()
 
     if (connection) {
-      //await seedClients(connection)
-      //await seedInvoices(connection)
-      await seedUsers(connection)
+      await seedClients(connection)
+      await seedInvoices(connection)
+      //await seedUsers(connection)
       process.exit(0)
     }
   } catch (error) {
