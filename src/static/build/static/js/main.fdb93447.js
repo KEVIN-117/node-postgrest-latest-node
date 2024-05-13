@@ -13037,16 +13037,14 @@
             ],
           },
         ])
-      a
-        .createRoot(document.getElementById('root'))
-        .render(
-          (0, Mt.jsx)(t.StrictMode, {
-            children: (0, Mt.jsx)('div', {
-              className: 'dark',
-              children: (0, Mt.jsx)(Pt, { router: Ft }),
-            }),
+      a.createRoot(document.getElementById('root')).render(
+        (0, Mt.jsx)(t.StrictMode, {
+          children: (0, Mt.jsx)('div', {
+            className: 'dark',
+            children: (0, Mt.jsx)(Pt, { router: Ft }),
           }),
-        ),
+        }),
+      ),
         jt()
     })()
 })()
