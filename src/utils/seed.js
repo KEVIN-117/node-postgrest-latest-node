@@ -1,6 +1,8 @@
+'use strict'
 import pg from 'pg'
 import { getEnv } from '../../config/configurations.js'
-import { clients, invoices } from './placeholder.js'
+import { clients, invoices, users } from './placeholder.js'
+import bcrypt from 'bcrypt'
 
 /**
  * This function is responsible for seeding the 'client' table in the database.
@@ -109,6 +111,41 @@ export async function seedInvoices(connection) {
   }
 }
 
+export async function seedUsers(connection) {
+  try {
+    await connection.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`)
+    const buildUserTable = `
+            CREATE TABLE IF NOT EXISTS users (
+                id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                role VARCHAR(255) NOT NULL DEFAULT 'user',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );`
+    const createTable = await connection.query(buildUserTable)
+    console.log('Created user table')
+
+    const clientInserted = await Promise.all(
+      users.map(async (user) => {
+        const hash = await bcrypt.hash(user.password, 10)
+        return await connection.query(
+          `INSERT INTO users (id, name, email, password, role) VALUES ($1, $2, $3, $4, $5) RETURNING *;`,
+          [user.id, user.name, user.email, hash, user.role],
+        )
+      }),
+    )
+    console.log(`Seeded ${clientInserted.length} users`)
+    return {
+      createTable: createTable,
+      users: clientInserted,
+    }
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 const { dbHost, dbName, dbPassword, dbUser, dbPort } = getEnv()
 
 async function seed() {
@@ -126,8 +163,9 @@ async function seed() {
     await connection.connect()
 
     if (connection) {
-      await seedClients(connection)
-      await seedInvoices(connection)
+      //await seedClients(connection)
+      //await seedInvoices(connection)
+      await seedUsers(connection)
       process.exit(0)
     }
   } catch (error) {

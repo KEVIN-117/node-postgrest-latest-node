@@ -15,7 +15,7 @@ app.listen(port, () => {
           `🛰️🛰️ Database is running on port ${sequelize.config.port} 🛰️🛰️`,
         )
         console.log(
-          `🛸🛸 Server is running on port ${port} url: http://localhost:${port} 🛸🛸`,
+          `🛸🛸\x1b[32mServer running on port \x1b[35m${port}\x1b[0m. The URL is\x1b[0m \x1b[34mhttp://localhost:${port}\x1b[0m 🛸🛸`,
         )
       })
       .catch((error) => {

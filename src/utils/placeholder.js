@@ -199,6 +199,19 @@ export const invoices = [
   },
 ]
 
-console.log(clients)
-console.log('------------------------------------')
-console.log(invoices)
+export const users = [
+  {
+    id: '8a8eb7a3-2e3b-4a91-9c1d-7c50fc12c380',
+    name: 'Admin',
+    email: 'admin@example.com',
+    password: 'contraseña_admin',
+    role: 'admin',
+  },
+  {
+    id: '8a8eb7a3-2e3b-4a91-9c1d-7c50fc12c381',
+    name: 'Usuario',
+    email: 'usuario@example.com',
+    password: 'contraseña_usuario',
+    role: 'user',
+  },
+]
