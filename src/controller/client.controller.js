@@ -69,3 +69,14 @@ export async function removeById(req, res) {
     return res.status(500).json({ message: error.message })
   }
 }
+
+export async function getAllDataInvoiceClient(req, res) {
+  try {
+    const { id } = req.params
+    const client = await clientService.getAllDataInvoiceClient(id)
+    if (!client) return res.status(400).json({ message: 'Client not found' })
+    return res.status(200).json(client)
+  } catch (error) {
+    return res.status(500).json({ message: error.message })
+  }
+}

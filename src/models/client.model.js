@@ -6,7 +6,7 @@ export const clientSchema = {
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
-    allowNull: false,
+    unique: true,
   },
   name: {
     type: DataTypes.STRING,

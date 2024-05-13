@@ -4,7 +4,6 @@ import { Sequelize } from 'sequelize'
 import { getEnv } from '../../config/configurations.js'
 
 const { dbHost, dbName, dbPassword, dbUser, dbPort } = getEnv()
-console.log(getEnv())
 
 const URI = `postgres://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}`
 
@@ -15,7 +14,7 @@ export class DatabaseSingleton {
       if (!DatabaseSingleton.#instance) {
         const sequelize = new Sequelize(URI, {
           dialect: 'postgres',
-          logging: false,
+          logging: true,
           host: dbHost,
         })
         await sequelize.authenticate()

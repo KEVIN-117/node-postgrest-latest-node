@@ -8,6 +8,8 @@ import {
     RouterProvider,
     Outlet
 } from "react-router-dom";
+import {Client} from "./pages/Client";
+import {Invoice} from "./pages/Invoice";
 
 const router = createBrowserRouter([
     {
@@ -25,11 +27,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/client",
-                element: <div>Client</div>
+                element: <Client />
             },
             {
                 path: "/invoices",
-                element: <div>Invoices</div>
+                element: <Invoice />
             },
             {
                 path: '/users',

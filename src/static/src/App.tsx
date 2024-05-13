@@ -5,7 +5,7 @@ import {Link, Outlet} from 'react-router-dom'
 function App() {
   return (
       <>
-          <body className="relative md:flex block gap-2 dark:bg-[#020e21] bg-white">
+          <body className="relative md:flex block gap-2 dark:bg-gray-950 bg-white antialiased">
               <aside
                   className="md:sticky top-0 md:h-screen h-auto md:w-[10%] w-full flex flex-col md:border-r rounded-r-xl border-blue-600 md:gap-5 gap-5 px-1">
                   <nav className="">

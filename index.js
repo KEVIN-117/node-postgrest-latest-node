@@ -7,15 +7,15 @@ app.listen(port, () => {
   try {
     DatabaseSingleton.getInstance()
       .then((sequelize) => {
-        console.log(`launched server on port ${port} 🚀🚀🚀`)
+        console.log(`launched server 🚀🚀🚀`)
         console.log(
-          `🚀🚀🚀Connected to database ${sequelize.config.database} 🚀🚀🚀`,
+          `🚀🚀🚀Connected to database 🚀🚀🚀`,
         )
         console.log(
-          `🛰️🛰️ Database is running on port ${sequelize.config.port} 🛰️🛰️`,
+          `🛰️🛰️ Database is running 🛰️🛰️`,
         )
         console.log(
-          `🛸🛸\x1b[32mServer running on port \x1b[35m${port}\x1b[0m. The URL is\x1b[0m \x1b[34mhttp://localhost:${port}\x1b[0m 🛸🛸`,
+          `🛸🛸\x1b[32mServer running 🛸🛸`,
         )
       })
       .catch((error) => {

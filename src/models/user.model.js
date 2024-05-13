@@ -5,8 +5,8 @@ export const USER_TABLE = 'users'
 export const userSchema = {
   id: {
     type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
+    unique: true,
   },
   name: {
     type: DataTypes.STRING,
@@ -22,8 +22,8 @@ export const userSchema = {
     allowNull: false,
   },
   role: {
-    type: DataTypes.ENUM('admin', 'user'),
-    allowNull: false,
+    type: DataTypes.STRING,
+    allowNull: true,
     defaultValue: 'user',
   },
   createdAt: {

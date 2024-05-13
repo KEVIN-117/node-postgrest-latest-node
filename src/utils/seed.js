@@ -79,7 +79,7 @@ export async function seedInvoices(connection) {
           id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
           amount FLOAT NOT NULL,
           date DATE NOT NULL,
-          status VARCHAR(255) NOT NULL DEFAULT 'pending',
+          status VARCHAR(255) DEFAULT 'pending',
           client_id UUID NOT NULL,
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -118,9 +118,9 @@ export async function seedUsers(connection) {
             CREATE TABLE IF NOT EXISTS users (
                 id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
                 name VARCHAR(255) NOT NULL,
-                email VARCHAR(255) NOT NULL,
+                email VARCHAR(255) NOT NULL UNIQUE,
                 password VARCHAR(255) NOT NULL,
-                role VARCHAR(255) NOT NULL DEFAULT 'user',
+                role VARCHAR(255) DEFAULT 'user',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );`
@@ -165,7 +165,7 @@ async function seed() {
     if (connection) {
       await seedClients(connection)
       await seedInvoices(connection)
-      //await seedUsers(connection)
+      await seedUsers(connection)
       process.exit(0)
     }
   } catch (error) {

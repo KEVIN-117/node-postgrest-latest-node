@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vercel/postgres": "^0.8.0",
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "pg-hstore": "^2.3.4",

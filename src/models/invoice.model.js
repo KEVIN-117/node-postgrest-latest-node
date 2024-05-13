@@ -7,6 +7,7 @@ export const invoiceSchema = {
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
+    unique: true,
   },
   amount: {
     type: DataTypes.FLOAT,
@@ -18,8 +19,8 @@ export const invoiceSchema = {
     defaultValue: new Date(),
   },
   status: {
-    type: DataTypes.STRING(255),
-    allowNull: false,
+    type: DataTypes.STRING,
+    allowNull: true,
     defaultValue: 'pending',
   },
   client_id: {
