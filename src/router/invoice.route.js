@@ -1,5 +1,13 @@
-import {Router} from "express";
-import { create, findAll, findById, findByUserId, update, removeById, findByClientId} from '../controller/invoice.controller.js'
+import { Router } from 'express'
+import {
+  create,
+  findAll,
+  findById,
+  findByUserId,
+  update,
+  removeById,
+  findByClientId,
+} from '../controller/invoice.controller.js'
 
 const invoiceRouter = Router()
 

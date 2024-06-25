@@ -8,15 +8,9 @@ app.listen(port, () => {
     DatabaseSingleton.getInstance()
       .then((sequelize) => {
         console.log(`launched server 🚀🚀🚀`)
-        console.log(
-          `🚀🚀🚀Connected to database 🚀🚀🚀`,
-        )
-        console.log(
-          `🛰️🛰️ Database is running 🛰️🛰️`,
-        )
-        console.log(
-          `🛸🛸\x1b[32mServer running 🛸🛸`,
-        )
+        console.log(`🚀🚀🚀Connected to database 🚀🚀🚀`)
+        console.log(`🛰️🛰️ Database is running 🛰️🛰️`)
+        console.log(`🛸🛸\x1b[32mServer running 🛸🛸`)
       })
       .catch((error) => {
         console.error(error)

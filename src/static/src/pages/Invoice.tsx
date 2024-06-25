@@ -5,7 +5,9 @@ export function Invoice() {
     const [data, setData] = useState<InvoicesDtoCreate[]>([])
 
     useEffect(() => {
-        fetch('/api/invoices/client')
+        fetch('/api/invoices/client', {
+            cache: 'no-cache',
+        })
         .then(response => response.json())
         .then(data => setData(data)).catch((err) => {
             console.log(err)
