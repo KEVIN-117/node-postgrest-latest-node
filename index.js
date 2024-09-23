@@ -6,7 +6,7 @@ const { port } = getEnv()
 app.listen(port, () => {
   try {
     DatabaseSingleton.getInstance()
-      .then((sequelize) => {
+      .then(() => {
         console.log(`launched server 🚀🚀🚀`)
         console.log(`🚀🚀🚀Connected to database 🚀🚀🚀`)
         console.log(`🛰️🛰️ Database is running 🛰️🛰️`)

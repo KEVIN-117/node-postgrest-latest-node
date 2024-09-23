@@ -16781,16 +16781,14 @@
           ],
         },
       ])
-      a
-        .createRoot(document.getElementById('root'))
-        .render(
-          (0, Mt.jsx)(t.StrictMode, {
-            children: (0, Mt.jsx)('div', {
-              className: 'dark',
-              children: (0, Mt.jsx)(_t, { router: sa }),
-            }),
+      a.createRoot(document.getElementById('root')).render(
+        (0, Mt.jsx)(t.StrictMode, {
+          children: (0, Mt.jsx)('div', {
+            className: 'dark',
+            children: (0, Mt.jsx)(_t, { router: sa }),
           }),
-        ),
+        }),
+      ),
         Ot()
     })()
 })()
